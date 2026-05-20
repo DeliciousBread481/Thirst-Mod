@@ -91,12 +91,14 @@ public class Thirst {
 
    private void clientSetup(FMLClientSetupEvent event) {
       if (ModList.get().isLoaded("create")) {
-         event.enqueueWork(() -> ((<undefinedtype>)(new Object() {
-               public void registerPonderPlugin() {
-                  PonderIndex.addPlugin(new ThirstPonderPlugin());
-               }
-            })).registerPonderPlugin());
+         event.enqueueWork(() -> PonderIndex.addPlugin(new ThirstPonderPlugin()));
       }
+
+      if (ModList.get().isLoaded("vampirism")) {
+         ThirstBarRenderer.checkIfPlayerIsVampire = true;
+      }
+
+   }
 
       if (ModList.get().isLoaded("vampirism")) {
          ThirstBarRenderer.checkIfPlayerIsVampire = true;
