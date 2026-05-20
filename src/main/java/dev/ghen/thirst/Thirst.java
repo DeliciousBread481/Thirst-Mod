@@ -99,13 +99,7 @@ public class Thirst {
       }
 
    }
-
-      if (ModList.get().isLoaded("vampirism")) {
-         ThirstBarRenderer.checkIfPlayerIsVampire = true;
-      }
-
-   }
-
+   
    public void registerCapabilities(RegisterCapabilitiesEvent event) {
       event.register(IThirst.class);
    }
